@@ -7,29 +7,30 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/style.css">
 
   <title>Frontend Mentor | Interactive rating component</title>
 </head>
 
 <body>
 
-  <main>
+  <main class="user-rating">
     <!-- Rating state start -->
 
-    <figure class="star">
+    <figure class="user-rating__star">
       <img src="./images/icon-star.svg" alt="star icon">
     </figure>
 
-    <h1 class="title">
+    <h1 class="user-rating__title">
       How did we do?
     </h1>
 
-    <p class="description">
+    <p class="user-rating__description">
       Please let us know how we did with your support request. All feedback is appreciated
       to help us improve our offering!
     </p>
 
-    <ul class="rating">
+    <ul class="user-rating__rating-number">
       <li>1</li>
       <li>2</li>
       <li>3</li>
@@ -37,7 +38,7 @@
       <li>5</li>
     </ul>
 
-    <button>
+    <button class="user-rating__submit">
       Submit
     </button>
 
