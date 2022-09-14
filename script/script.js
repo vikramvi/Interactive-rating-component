@@ -18,31 +18,6 @@ const submit = document.getElementsByClassName("user-rating__submit");
 
 //Functions
 
-let ratingArray = [];
-// ratingArray.push(rating_1);
-// ratingArray.push(rating_2);
-// ratingArray.push(rating_3);
-// ratingArray.push(rating_4);
-// ratingArray.push(rating_5);
-
-const getAllClassLists = () => {
-    console.log("rating_1  " + rating_1.classList);
-    return 1;
-}
-
-
-const ratingElementCurrentlySelected =
-    ratingArray.forEach(element =>
-        //console.log(element + "  " + element.classList.contains("user-rating__rating-number--orange"))
-        console.log(element)
-    );
-
-// ratingArray.filter(ratingElement =>
-//     //console.log("ratingElement " + ratingElement.innerText);
-//     ratingElement.classList.contains("user-rating__rating-number--orange") === true
-// );
-
-
 const removeClassFromElements = (elementToExclude) => {
 
     console.log("elementToExclude  " + elementToExclude.innerText + "  " + typeof (elementToExclude));
@@ -83,30 +58,6 @@ const removeClassFromElements = (elementToExclude) => {
     }
 
 
-    //let element;
-
-    //console.log(typeof (ratingArray[0]));
-
-    //ratingArray[0].classList.remove("user-rating__rating-number--orange");
-
-    // for (i = 1; i < 6; i++) {
-    //     console.log(`rating_${i}`);
-    //     rating_5.classList.remove("user-rating__rating-number--orange");
-    //     // classList.remove("user-rating__rating-number--orange");
-    //     if (i != parseInt(elementToExclude.innerText)) {
-    //         element = rating_ + i;
-    //         console.log(typeof (element));
-    //         element.classList.remove("user-rating__rating-number--orange");
-    //     }
-    // }
-
-    // let newArray = ratingArray.slice();
-    // newArray.splice(elementToExclude, 1);
-
-    // console.log(newArray.join(""));
-
-    // newArray.forEach(element => element.classList.remove("user-rating__rating-number--orange"));
-
 }
 
 //Event Listeners
@@ -117,26 +68,12 @@ const removeClassFromElements = (elementToExclude) => {
 //remove class from other elements
 //find out element which has got clicked
 //find out which element has got given class
-rating_1.addEventListener("click", (e) => {
-
-    //console.log(getAllClassLists());
-
-    //console.log(ratingElementCurrentlySelected);
-
+rating_1.addEventListener("click", () => {
 
     rating_1.classList.add("user-rating__rating-number--orange");
 
     removeClassFromElements(rating_1);
 
-    //console.log(rating_5.classList.contains("user-rating__rating-number--orange"));
-    //rating_5.classList.remove("user-rating__rating-number--orange");
-
-    //ratingElementCurrentlySelected[0].classList.remove("user-rating__rating-number--orange");
-
-    // console.log(e.target);
-    // console.log(rating_1);
-
-    // console.log(document.getElementsByClassName("user-rating__rating-number"));
 }
 );
 
@@ -148,9 +85,6 @@ rating_2.addEventListener("click", () => {
 });
 
 rating_3.addEventListener("click", (e) => {
-    //console.log(rating_2.innerText);
-
-    //alert("clicked 2");
 
     rating_3.classList.add("user-rating__rating-number--orange");
 
@@ -158,9 +92,6 @@ rating_3.addEventListener("click", (e) => {
 });
 
 rating_4.addEventListener("click", (e) => {
-    //console.log(rating_2.innerText);
-
-    //alert("clicked 2");
 
     rating_4.classList.add("user-rating__rating-number--orange");
 
@@ -168,9 +99,6 @@ rating_4.addEventListener("click", (e) => {
 });
 
 rating_5.addEventListener("click", (e) => {
-    //console.log(rating_2.innerText);
-
-    //alert("clicked 2");
 
     rating_5.classList.add("user-rating__rating-number--orange");
 
