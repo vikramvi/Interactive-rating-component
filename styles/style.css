@@ -96,6 +96,15 @@ body {
   width: 4rem;
   height: 4rem;
   text-align: center;
+  cursor: pointer;
+}
+
+.user-rating__rating-number--orange {
+  background-color: var(--clr-primary-orange);
+}
+
+.user-rating__rating-number > li:hover {
+  background-color: var(--clr-neutral-light-gray);
 }
 
 .thank-you {
