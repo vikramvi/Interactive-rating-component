@@ -21,6 +21,8 @@ const submit = document.getElementsByClassName("user-rating__submit")[0];
 
 // ---------------------- Functions ----------------------
 
+const ratingArray = [rating_1, rating_2, rating_3, rating_4, rating_5];
+
 const removeClassFromElements = (elementToExclude) => {
 
     console.log("elementToExclude  " + elementToExclude.innerText + "  " + typeof (elementToExclude));
@@ -63,6 +65,21 @@ const removeClassFromElements = (elementToExclude) => {
 
 }
 
+const isRatingSelected = () => {
+    let isClassExists = false;
+
+    //console.log(ratingArray);
+    ratingArray.forEach(element => {
+        console.log(isClassExists);
+        if (element.classList.contains("user-rating__rating-number--orange") === true) {
+            isClassExists = true;
+        }
+    })
+
+    //console.log(isClassExists);
+    return isClassExists;
+}
+
 // ---------------------- Event Listeners ----------------------
 
 
@@ -77,6 +94,8 @@ rating_1.addEventListener("click", () => {
 
     removeClassFromElements(rating_1);
 
+    submit.disabled = false;
+
 }
 );
 
@@ -85,33 +104,52 @@ rating_2.addEventListener("click", () => {
     rating_2.classList.add("user-rating__rating-number--orange");
 
     removeClassFromElements(rating_2);
+
+    submit.disabled = false;
 });
 
-rating_3.addEventListener("click", (e) => {
+rating_3.addEventListener("click", () => {
 
     rating_3.classList.add("user-rating__rating-number--orange");
 
     removeClassFromElements(rating_3);
+
+    submit.disabled = false;
 });
 
-rating_4.addEventListener("click", (e) => {
+rating_4.addEventListener("click", () => {
 
     rating_4.classList.add("user-rating__rating-number--orange");
 
     removeClassFromElements(rating_4);
+
+    submit.disabled = false;
 });
 
-rating_5.addEventListener("click", (e) => {
+rating_5.addEventListener("click", () => {
 
     rating_5.classList.add("user-rating__rating-number--orange");
 
     removeClassFromElements(rating_5);
+
+    submit.disabled = false;
 });
 
 
 //user clicks on Submit button to view Thank You screen
+//check if any of the rating values are selected
 submit.addEventListener("click", () => {
+
+    // console.log("isRatingSelected   " + isRatingSelected());
+
+    // if (isRatingSelected()) {
+    //     submit.disabled = false;
+    // }
+
     mainScreen.style.display = "none";
     thankYouScreen.style.display = "block";
 })
 
+window.onload = () => {
+    submit.disabled = true;
+}
