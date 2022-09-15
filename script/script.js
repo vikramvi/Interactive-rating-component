@@ -147,9 +147,11 @@ submit.addEventListener("click", () => {
     // }
 
     mainScreen.style.display = "none";
-    thankYouScreen.style.display = "block";
+    thankYouScreen.style.display = "grid";
 })
 
 window.onload = () => {
     submit.disabled = true;
+    //mainScreen.style.display = "grid";
+    thankYouScreen.style.display = "none";
 }
