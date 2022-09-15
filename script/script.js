@@ -5,7 +5,7 @@
 //Tests
 
 
-//DOM Selectors 
+// ---------------------- DOM Selectors ----------------------
 
 let rating_1 = document.getElementsByClassName("user-rating__rating-number-1")[0];
 let rating_2 = document.getElementsByClassName("user-rating__rating-number-2")[0];
@@ -13,10 +13,13 @@ let rating_3 = document.getElementsByClassName("user-rating__rating-number-3")[0
 let rating_4 = document.getElementsByClassName("user-rating__rating-number-4")[0];
 let rating_5 = document.getElementsByClassName("user-rating__rating-number-5")[0];
 
-const submit = document.getElementsByClassName("user-rating__submit");
+const mainScreen = document.getElementsByClassName("user-rating")[0];
+const thankYouScreen = document.getElementsByClassName("thank-you")[0];
+
+const submit = document.getElementsByClassName("user-rating__submit")[0];
 
 
-//Functions
+// ---------------------- Functions ----------------------
 
 const removeClassFromElements = (elementToExclude) => {
 
@@ -60,7 +63,7 @@ const removeClassFromElements = (elementToExclude) => {
 
 }
 
-//Event Listeners
+// ---------------------- Event Listeners ----------------------
 
 
 
@@ -105,4 +108,10 @@ rating_5.addEventListener("click", (e) => {
     removeClassFromElements(rating_5);
 });
 
+
+//user clicks on Submit button to view Thank You screen
+submit.addEventListener("click", () => {
+    mainScreen.style.display = "none";
+    thankYouScreen.style.display = "block";
+})
 
