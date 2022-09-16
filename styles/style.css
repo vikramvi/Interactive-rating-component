@@ -105,6 +105,10 @@ body {
   list-style: none;
 }
 
+.user-rating__rating-number--orange {
+  background-color: var(--clr-primary-orange) !important;
+}
+
 .user-rating__rating-number > li {
   color: var(--clr-medium-gray);
   background-color: var(--clr-very-dark-blue);
@@ -117,20 +121,20 @@ body {
   cursor: pointer;
 }
 
-.user-rating__rating-number--orange {
-  background-color: var(--clr-primary-orange);
-}
-
 .user-rating__rating-number > li:hover {
   background-color: var(--clr-neutral-light-gray);
 }
 
 .user-rating__submit {
-  background-color: var(--clr-primary-orange);
   color: var(--clr-neutral-white);
   padding: 1rem 0;
   border: none;
   border-radius: 2rem;
+}
+
+.user-rating__submit:enabled {
+  background-color: var(--clr-primary-orange);
+  cursor: pointer;
 }
 
 /* Thank You Screen */
