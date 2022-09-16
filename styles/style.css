@@ -177,6 +177,18 @@ body {
   text-align: center;
 }
 
+/* ----------- ----------- ----------- desktop second approach ----------- ----------- ----------- */
+
+@media screen and (min-width: 48rem) {
+  .user-rating {
+    width: 25%;
+  }
+
+  .thank-you {
+    width: 25%;
+  }
+}
+
 /* ----------- ----------- ----------- grid area names ----------- ----------- ----------- */
 
 /* Rating Screen */

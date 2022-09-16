@@ -15,6 +15,7 @@ let rating_5 = document.getElementsByClassName("user-rating__rating-number-5")[0
 
 const mainScreen = document.getElementsByClassName("user-rating")[0];
 const thankYouScreen = document.getElementsByClassName("thank-you")[0];
+const userSelectedValue = document.getElementsByClassName("thanks-you__user-selection-value")[0];
 
 const submit = document.getElementsByClassName("user-rating__submit")[0];
 
@@ -80,6 +81,11 @@ const isRatingSelected = () => {
     return isClassExists;
 }
 
+
+const setRatingValue = (value) => {
+    userSelectedValue.textContent = value;
+}
+
 // ---------------------- Event Listeners ----------------------
 
 
@@ -96,6 +102,7 @@ rating_1.addEventListener("click", () => {
 
     submit.disabled = false;
 
+    setRatingValue(rating_1.innerText);
 }
 );
 
@@ -106,6 +113,8 @@ rating_2.addEventListener("click", () => {
     removeClassFromElements(rating_2);
 
     submit.disabled = false;
+
+    setRatingValue(rating_2.innerText);
 });
 
 rating_3.addEventListener("click", () => {
@@ -115,6 +124,8 @@ rating_3.addEventListener("click", () => {
     removeClassFromElements(rating_3);
 
     submit.disabled = false;
+
+    setRatingValue(rating_3.innerText);
 });
 
 rating_4.addEventListener("click", () => {
@@ -124,6 +135,8 @@ rating_4.addEventListener("click", () => {
     removeClassFromElements(rating_4);
 
     submit.disabled = false;
+
+    setRatingValue(rating_4.innerText);
 });
 
 rating_5.addEventListener("click", () => {
@@ -133,6 +146,8 @@ rating_5.addEventListener("click", () => {
     removeClassFromElements(rating_5);
 
     submit.disabled = false;
+
+    setRatingValue(rating_5.innerText);
 });
 
 
@@ -148,6 +163,7 @@ submit.addEventListener("click", () => {
 
     mainScreen.style.display = "none";
     thankYouScreen.style.display = "grid";
+
 })
 
 window.onload = () => {
