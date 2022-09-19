@@ -3,7 +3,7 @@
 //Clicking on Submit removes current page and shows thanks page
 
 //Tests
-
+// NA, couldn't think of any
 
 // ---------------------- DOM Selectors ----------------------
 
@@ -24,64 +24,21 @@ const submit = document.getElementsByClassName("user-rating__submit")[0];
 
 const ratingArray = [rating_1, rating_2, rating_3, rating_4, rating_5];
 
+
+//Get sub-set of array except selected element
+//Remove required class from sub-set of array
 const removeClassFromElements = (elementToExclude) => {
 
-    console.log("elementToExclude  " + elementToExclude.innerText + "  " + typeof (elementToExclude));
-
-    if (!(elementToExclude.innerText === rating_1.innerText)) {
-        console.log("if");
-        rating_1.classList.remove("user-rating__rating-number--orange");
-    } else {
-        console.log("else");
-    }
-
-    if (!(elementToExclude.innerText === rating_2.innerText)) {
-        console.log("if");
-        rating_2.classList.remove("user-rating__rating-number--orange");
-    } else {
-        console.log("else");
-    }
-
-    if (!(elementToExclude.innerText === rating_3.innerText)) {
-        console.log("if");
-        rating_3.classList.remove("user-rating__rating-number--orange");
-    } else {
-        console.log("else");
-    }
-
-    if (!(elementToExclude.innerText === rating_4.innerText)) {
-        console.log("if");
-        rating_4.classList.remove("user-rating__rating-number--orange");
-    } else {
-        console.log("else");
-    }
-
-    if (!(elementToExclude.innerText === rating_5.innerText)) {
-        console.log("if");
-        rating_5.classList.remove("user-rating__rating-number--orange");
-    } else {
-        console.log("else");
-    }
-
-
+    ratingArray
+        .filter(element => element !== elementToExclude)
+        .forEach((element) => {
+            if (element.classList.contains("user-rating__rating-number--orange") === true) {
+                element.classList.remove("user-rating__rating-number--orange");
+            }
+        });
 }
 
-const isRatingSelected = () => {
-    let isClassExists = false;
-
-    //console.log(ratingArray);
-    ratingArray.forEach(element => {
-        console.log(isClassExists);
-        if (element.classList.contains("user-rating__rating-number--orange") === true) {
-            isClassExists = true;
-        }
-    })
-
-    //console.log(isClassExists);
-    return isClassExists;
-}
-
-
+//Thank you screen dynamic value to be set from user selection
 const setRatingValue = (value) => {
     userSelectedValue.textContent = value;
 }
@@ -154,12 +111,6 @@ rating_5.addEventListener("click", () => {
 //user clicks on Submit button to view Thank You screen
 //check if any of the rating values are selected
 submit.addEventListener("click", () => {
-
-    // console.log("isRatingSelected   " + isRatingSelected());
-
-    // if (isRatingSelected()) {
-    //     submit.disabled = false;
-    // }
 
     mainScreen.style.display = "none";
     thankYouScreen.style.display = "grid";
