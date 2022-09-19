@@ -1,4 +1,5 @@
 
+//User Stories
 //Number click changes the color
 //Clicking on Submit removes current page and shows thanks page
 
@@ -22,6 +23,12 @@ const submit = document.getElementsByClassName("user-rating__submit")[0];
 
 // ---------------------- Functions ----------------------
 
+window.onload = () => {
+    submit.disabled = true;
+    //mainScreen.style.display = "grid";
+    thankYouScreen.style.display = "none";
+}
+
 const ratingArray = [rating_1, rating_2, rating_3, rating_4, rating_5];
 
 
@@ -43,8 +50,17 @@ const setRatingValue = (value) => {
     userSelectedValue.textContent = value;
 }
 
-// ---------------------- Event Listeners ----------------------
+const postElementClickActions = (element) => {
+    element.classList.add("user-rating__rating-number--orange");
 
+    removeClassFromElements(element);
+
+    submit.disabled = false;
+
+    setRatingValue(element.innerText);
+}
+
+// ---------------------- Event Listeners ----------------------
 
 
 //add class to element if it doesn't exist
@@ -53,58 +69,32 @@ const setRatingValue = (value) => {
 //find out which element has got given class
 rating_1.addEventListener("click", () => {
 
-    rating_1.classList.add("user-rating__rating-number--orange");
-
-    removeClassFromElements(rating_1);
-
-    submit.disabled = false;
-
-    setRatingValue(rating_1.innerText);
+    postElementClickActions(rating_1);
 }
 );
 
 rating_2.addEventListener("click", () => {
 
-    rating_2.classList.add("user-rating__rating-number--orange");
+    postElementClickActions(rating_2);
 
-    removeClassFromElements(rating_2);
-
-    submit.disabled = false;
-
-    setRatingValue(rating_2.innerText);
 });
 
 rating_3.addEventListener("click", () => {
 
-    rating_3.classList.add("user-rating__rating-number--orange");
+    postElementClickActions(rating_3);
 
-    removeClassFromElements(rating_3);
-
-    submit.disabled = false;
-
-    setRatingValue(rating_3.innerText);
 });
 
 rating_4.addEventListener("click", () => {
 
-    rating_4.classList.add("user-rating__rating-number--orange");
+    postElementClickActions(rating_4);
 
-    removeClassFromElements(rating_4);
-
-    submit.disabled = false;
-
-    setRatingValue(rating_4.innerText);
 });
 
 rating_5.addEventListener("click", () => {
 
-    rating_5.classList.add("user-rating__rating-number--orange");
+    postElementClickActions(rating_5);
 
-    removeClassFromElements(rating_5);
-
-    submit.disabled = false;
-
-    setRatingValue(rating_5.innerText);
 });
 
 
@@ -117,8 +107,4 @@ submit.addEventListener("click", () => {
 
 })
 
-window.onload = () => {
-    submit.disabled = true;
-    //mainScreen.style.display = "grid";
-    thankYouScreen.style.display = "none";
-}
+
